@@ -171,10 +171,41 @@ img.big {
    -ms-transform: translate(-50%, -50%);
 }
 
+#cow {
+   display: none;
+   animation-duration: 2s;
+   animation-name: animate;
+   animation-iteration-count: 3;
+   animation-direction: alternate;
+}
+
+@keyframes animate {
+   from {
+      margin-left: -5%;
+      transform: rotate(0);
+   }
+
+   to {
+      margin-left: 3%;
+      transform: rotate(360deg);
+   }
+}
+
+button {
+   padding: 10px;
+   font-size: 20px;
+   background-color: pink;
+   border-radius: 50%;
+}
+
 
 @media (prefers-reduced-motion) {
    video {
       display: none;
+   }
+
+   #cow {
+      animation: none;
    }
 }
 
@@ -196,10 +227,14 @@ img.big {
       padding-bottom: 5px;
       font-size: 14px;
       margin: 0px;
-      margin-bottom: 50px;
+      padding-bottom: 50px;
       width: 100%;
       background-color: rgb(239, 140, 201);
       color: black;
+   }
+
+   nav a:hover {
+      background-color: rgb(223, 77, 167);
    }
 
    nav li {
@@ -220,5 +255,93 @@ img.big {
 
    #skip {
       font-size: 15px;
+   }
+
+   @media screen and (min-width: 850px) {
+      #cow {
+         display: block;
+         width: 120px;
+         background-color: #ffffff00;
+         margin-left: 3%;
+      }
+
+      #cow>img {
+         box-shadow: none;
+      }
+
+      body {
+         grid-template-columns: 100%;
+      }
+
+      body>header {
+         position: sticky;
+         top: 0;
+         width: 100%;
+         z-index: 1;
+      }
+
+      nav {
+         height: 100px;
+         position: static;
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         align-content: center;
+      }
+
+      nav a {
+         display: inline;
+         font-size: 30px;
+         padding: 5px;
+         background-color: rgb(239, 140, 201);
+         color: black;
+      }
+
+      nav a:hover {
+         background-color: rgb(223, 77, 167);
+      }
+
+      nav li {
+         margin-bottom: 0px;
+         display: inline-block;
+         margin-left: 10px;
+      }
+
+      nav ul {
+         margin-left: 1%;
+         margin-right: 1%;
+      }
+
+      .grid {
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         margin: 15px 7px;
+      }
+
+      #fourgrid {
+         grid-template-columns: 1fr 1fr 1fr 1fr;
+         margin: 15px 7px;
+      }
+
+      .section {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+      }
+
+      .section>h2,
+      .section>h3,
+      .section>.grid {
+         grid-column: 1 / span 2;
+      }
+
+      img.big {
+         width: 90%;
+      }
+
+      #skip {
+         font-size: 30px;
+      }
+
    }
 }

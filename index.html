@@ -16,6 +16,7 @@
    <header>
       <a href="#main-content" id="skip" tabindex="0">Skip to Main Content</a>
       <nav>
+         <a href="index.html" id="cow"><img src="images/cow-with-wheat-in-mouth.png" alt="cow with wheat in mouth"></a>
          <ul>
             <li><a href="index.html" class="current">Home</a></li>
             <li><a href="pets.html">Pets</a></li>
@@ -33,8 +34,8 @@
             globetrotting adventures. </p>
 
       </div>
-      <h2>Philip's favorite poem:</h2>
-      <div class="textbox">
+      <h2 id="poem-header">Philip's favorite poem:</h2>
+      <div class="textbox" id="poem">
          <p>I feel like a chip on my shoulders</p>
          <p>I feel like I'm losin' my focus</p>
          <p>I feel like I'm losin' my patience</p>
@@ -55,10 +56,24 @@
          <p>I feel for you, I've been in the field for you</p>
          <p>It's real for you, right? ----, I feel like</p>
          <p>Ain't nobody prayin' for me</p>
-
       </div>
 
+      <button onclick="poetry();" id="poem-button">change to 2nd favorite</button>
+
    </main>
+   <script>
+      function poetry() {
+         if (document.getElementById("poem-button").innerHTML == "change to 2nd favorite") {
+            document.getElementById("poem-button").innerHTML = "change to favorite";
+            document.getElementById("poem-header").innerHTML = "Philip's 2nd favorite poem:";
+            document.getElementById("poem").innerHTML = "<p>Ducky was well-aware</p> <p>They robbed the manager and shot a customer last year</p> <p>He figured he'd get on these -----'s good sides</p> <p>Free chicken every time Anthony posted in line</p> <p>Two extra biscuits, Anthony liked him and then let him slide</p> <p>They didn't kill him, in fact, it look like they're the last to survive</p> <p>Pay attention, that one decision changed both of they lives</p> <p>One curse at a time</p> <p>Reverse the manifest and good karma, and I'll tell you why</p> <p>You take two strangers and put 'em in random predicaments</p> <p>Give 'em a soul so they can make their own choices and live with it</p> <p>20 years later, them same strangers, you make 'em meet again</p> <p>Inside recording studios where they reapin' their benefits</p> <p>Then you start remindin' them about that chicken incident</p> <p>Whoever thought the greatest rapper would be from coincidence?</p> <p>Because if Anthony killed Ducky, Top Dawg could be servin' life</p> <p>While I grew up without a father and die in a gunfight</p>";
+         } else {
+            document.getElementById("poem-button").innerHTML = "change to 2nd favorite";
+            document.getElementById("poem-header").innerHTML = "Philip's favorite poem:";
+            document.getElementById("poem").innerHTML = "<p>I feel like a chip on my shoulders</p><p>I feel like I'm losin' my focus</p><p>I feel like I'm losin' my patience</p><p>I feel like my thoughts in the basement</p><p>Feel like, I feel like you're miseducated</p><p>Feel like I don't wanna be bothered</p><p> I feel like you may be the problem</p ><p>I feel like it ain't no tomorrow, --- the world</p><p>The world is endin', I'm done pretendin'</p><p>And --- you if you get offended</p><p>I feel like friends been overrated</p><p>I feel like the family been fakin'</p><p>I feel like the feelings are changin'</p><p>Feel like my daughter compromised and jaded</p><p>Feel like you wanna scrutinize how I made it</p><p>Feel like I ain't feelin' you all</p><p>Feel like removin' myself, no feelings involved</p><p>I feel for you, I've been in the field for you</p><p>It's real for you, right? ----, I feel like</p><p>Ain't nobody prayin' for me</p>";
+         }
+      } 
+   </script>
 
 </body>
 
